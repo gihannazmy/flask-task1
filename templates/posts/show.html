@@ -1,0 +1,27 @@
+
+
+
+{% extends './base.html' %}
+
+
+{% block title %}
+    Post Details
+{% endblock %}
+
+{% block body %}
+
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="{{ post.image_url }}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">{{post.title}}</h5>
+    <p class="card-text">{{post.description}}.</p>
+    <a href="{{post.edit_url}}" class="btn btn-primary">Edit</a>
+    <a href="{{ post.delete_url}}" class="btn btn-danger">Delete</a>
+
+
+  </div>
+</div>
+
+
+
+{% endblock %}

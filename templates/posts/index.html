@@ -1,0 +1,37 @@
+{% extends './base.html' %}
+
+
+{% block title %}
+    Index Page
+{% endblock %}
+
+{% block body %}
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Title</th>
+      <th scope="col">Image</th>
+        <th scope="col">Description</th>
+        <th scope="col">Actions</th>
+
+    </tr>
+
+  <tbody>
+  {% for post in posts %}
+    <tr>
+       <th scope="col">{{post['id']}}</th>
+      <th scope="col">{{post['title']}}</th>
+        <th scope="col">{{post['description']}}</th>
+        <th scope="col">{{post['image']}}</th>
+        <th scope="col"><a href="{{ url_for ('show', id= post.id)}}" class="btn btn-primary">Show</a></th>
+        <th scope="col"><a href="{{ post.delete_url}}" class="btn btn-danger">Delete</a></th>
+
+    </tr>
+  {% endfor %}
+
+  </tbody>
+</table>
+
+{% endblock %}

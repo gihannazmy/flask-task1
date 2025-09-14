@@ -1,0 +1,14 @@
+ . .venv/bin/activate
+  pip install Flask
+
+ flask --app app run --debug
+
+ export FLASK_APP=app
+ run --debug
+
+
+pip install flask-shell-ipython
+flask shell
+app.url_map
+
+pip install -U Flask-SQLAlchemy
